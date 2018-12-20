@@ -45,6 +45,8 @@ io.on('connection', (socket) => {
     
 });
 
-server.listen(3000, testserverbmi.westeurope.cloudapp.azure.com,()=>{
-console.log('Node app is running on port 3000')
+app.set('port', process.env.PORT || 3000);
+//app.set('host', 'testserverbmi.westeurope.cloudapp.azure.com');
+server.listen(app.get('port'),()=>{
+console.log('Node app is running on port' + app.get('port'))
 });
