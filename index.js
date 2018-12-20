@@ -45,6 +45,6 @@ io.on('connection', (socket) => {
     
 });
 
-server.listen(3000,()=>{
+server.listen(3000, testserverbmi.westeurope.cloudapp.azure.com,()=>{
 console.log('Node app is running on port 3000')
 });
