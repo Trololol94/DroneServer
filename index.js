@@ -13,37 +13,25 @@ io.on('connection', (socket) => {
     
     socket.on('join', function(){
         //console.log('Test message by server')
-        let  message = {"message":"decollage"}
+        let  message = {"message":"yawLeft"}
 
-        setTimeout(function () {
+
+
+        let check = setInterval(function () {
         socket.emit('newmessage', message)
-            }, 5000); 
-
-        //socket.emit('newmessage', message)
+            }, 1000); 
+        
+        socket.on('disconnect', function() {
+        console.log( 'user has left ')
+        clearInterval(check)
+    
+    
     });
-
-    socket.on('messagedetection', (senderNickname,messageContent) => {
-    
-        //log the message in console 
-    
-        console.log(senderNickname+" :" +messageContent)
-            //create a message object
-    
-        let  message = {"message":messageContent, "senderNickname":senderNickname}
-        //let message = {"message": "toto", "senderNickname":senderNickname}    
-        // send the message to the client side  
-    
-        socket.broadcast.emit('message', message )
         
     });
-    socket.on('disconnect', function() {
-        console.log( 'user has left ')
-        socket.broadcast.emit( "userdisconnect" ,' user has left')
-    
-    
-    });
-    
+
 });
+
 
 app.set('port', process.env.PORT || 3000);
 //app.set('host', 'testserverbmi.westeurope.cloudapp.azure.com');
