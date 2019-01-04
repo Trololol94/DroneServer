@@ -33,7 +33,7 @@ io.on('connection', (socket) => {
 
   });
 
-    
+
 
 /*
         let i=0;
@@ -75,6 +75,14 @@ io.on('connection', (socket) => {
     
     }); */
         
+    });
+
+
+        socket.on('disconnect', function() {
+        console.log( 'disconnect ')
+        //socket.broadcast.emit( "userdisconnect" ,' user has left')
+    
+    
     });
 
 });
