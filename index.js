@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
  //socket.emit('newmessage', "takeOff");
 
 
-   var stdin = process.openStdin();
+/*    var stdin = process.openStdin();
 
    stdin.addListener("data", function(d) {
     // note:  d is an object, and when converted to a string it will
@@ -31,21 +31,18 @@ io.on('connection', (socket) => {
          + "]");
     socket.emit('newmessage', message);
 
-  });
+  }); */
 
-
-
-/*
-        let i=0;
+      let i=0;
 
         let messages = [];
-        messages[0] = "takeOff";
-        messages[1] = "takeOff";
+        messages[0] = "yawLeft";
+        messages[1] = "yawLeft";
         messages[2] = "yawLeft";
-        messages[3] = "yawLeft";
-        messages[4] = "yawLeft";
-        messages[5] = "yawLeft";
-        messages[6] = "landing";
+        messages[3] = "yawRight";
+        messages[4] = "yawRight";
+        messages[5] = "yawRight";
+        messages[6] = "stopAll";
 
         function intervalFunc() {
         let  message = {"message":messages[i]}
